@@ -15,13 +15,13 @@ RUN a2enmod rewrite
 RUN docker-php-ext-install pdo_pgsql zip
 
 # Copy Laravel app files
-COPY . /app
+COPY . /var/www/html
 
 # Set write permissions to used folders
 RUN chown -R www-data:www-data /var/www/html /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Change working directory to Laravel app root
-WORKDIR /app
+WORKDIR /var/www/html/candy-shop-backend
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
