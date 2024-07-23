@@ -21,7 +21,7 @@ COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Change working directory to Laravel app root
-WORKDIR /var/www/html/candy-shop-backend
+WORKDIR /var/www/html
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
